@@ -1,6 +1,7 @@
 name: xd_registration_pkg
 description: A new Flutter package project.
 version: 0.0.1
+publish_to: none
 homepage:
 
 environment:
@@ -10,6 +11,16 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  xd_core:
+    git:
+      url: https://github.com/martiandev/xd_flutter_core
+      ref: v0.0.2
+    
+  firebase_auth: ^4.2.5
+  firebase_core: ^2.4.1
+  flutter_bloc: ^8.1.1
+  equatable: ^2.0.5
+
 
 dev_dependencies:
   flutter_test:
