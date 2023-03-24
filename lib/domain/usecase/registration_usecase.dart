@@ -8,7 +8,7 @@ class RegistrationUsecase {
   RegistrationUsecase(this.repository);
 
 
-  Future<Result> register(String email, String password) {
+  Future<Result> register(String email, String password) async {
     return repository.register(email, password);
   }
   
