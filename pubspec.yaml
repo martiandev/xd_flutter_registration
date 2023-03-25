@@ -1,6 +1,7 @@
 name: xd_registration_pkg
 description: A new Flutter package project.
-version: 0.0.5
+version: 0.0.7
+
 publish_to: none
 homepage:
 

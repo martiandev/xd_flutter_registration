@@ -21,13 +21,14 @@ class RegisterBloc extends Bloc<RegisterEvent, RegisterState> {
   _onRegisterFirebase(RegisterFirebaseEvent event, Emitter<RegisterState> emit) async {
     var repository = FirebaseRegistrationRepository();
     var usecase = RegistrationUsecase(repository);
-    await usecase.register(event.username, event.password).then((value) async =>  {
-    if(value is Success){
-      emit(ResgisterSuccess(value))
-    } else if (value is Failure) {
-      emit(ResgisterFailed(value))
+    var result = await usecase.register(event.username, event.password);
+  
+    if(result is Success){
+      emit(ResgisterSuccess(result));
+    } else if (result is Failure) {
+      emit(ResgisterFailed(result));
     }
-    });
+  
 
   }
 
