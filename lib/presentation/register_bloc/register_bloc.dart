@@ -12,9 +12,9 @@ part 'register_state.dart';
 
 class RegisterBloc extends Bloc<RegisterEvent, RegisterState> {
   RegisterBloc() : super(RegisterInitial()) {
-    on<RegisterFirebaseEvent>((event, emit) async{
-      _onRegisterFirebase(event,emit);
-    });
+
+    on<RegisterFirebaseEvent>((event, emit) async => _onRegisterFirebase(event,emit));
+  
   }
 
 
@@ -23,11 +23,11 @@ class RegisterBloc extends Bloc<RegisterEvent, RegisterState> {
     var usecase = RegistrationUsecase(repository);
     var result = await usecase.register(event.username, event.password);
   
-    if(result is Success){
-      emit(ResgisterSuccess(result));
-    } else if (result is Failure) {
-      emit(ResgisterFailed(result));
-    }
+    // if(result is Success){
+    //   emit(ResgisterSuccess(result));
+    // } else if (result is Failure) {
+    //   emit(ResgisterFailed(result));
+    // }
   
 
   }
